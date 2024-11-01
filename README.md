@@ -117,4 +117,4 @@ Este projeto é distribuído sob a licença MIT.
 
 ---
 
-Feito com 💻 por [Pedro Toscano](https://github.com/pedro12u) 😊
+Feito com 💻 por [Pedro Toscano](https://github.com/pedro12u) e [Gabriel Santos](https://github.com/gabrsantos1) 😊
