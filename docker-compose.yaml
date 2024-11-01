@@ -8,7 +8,7 @@ services:
       MYSQL_USER: unicesumar # Nome do usuário do banco de dados
       MYSQL_PASSWORD: unicesumar # Senha do usuário do banco de dados
     ports:
-      - "3306:3306"
+      - '3306:3306'
     volumes:
       - mysql_data:/var/lib/mysql
 
@@ -18,7 +18,7 @@ services:
     environment:
       ADMINER_DEFAULT_SERVER: database
     ports:
-      - "8080:8080"
+      - '8080:8080'
 
 volumes:
   mysql_data:
