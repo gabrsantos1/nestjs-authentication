@@ -1,24 +1,24 @@
+version: '3.8'
+
 services:
-  database:
-    image: mysql:8
-    container_name: database
+  db:
+    image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: root # Senha do usuário root
-      MYSQL_DATABASE: blog # Nome do banco de dados inicial
-      MYSQL_USER: unicesumar # Nome do usuário do banco de dados
-      MYSQL_PASSWORD: unicesumar # Senha do usuário do banco de dados
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: unknow_peter_sql
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: 'America/Sao_Paulo'
     ports:
-      - '3306:3306'
+      - '3307:3306'
     volumes:
-      - mysql_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
+      - ./sql-scripts:/docker-entrypoint-initdb.d
 
   adminer:
-    image: adminer
-    container_name: adminer
-    environment:
-      ADMINER_DEFAULT_SERVER: database
+    image: adminer:latest
     ports:
       - '8080:8080'
 
 volumes:
-  mysql_data:
+  db_data:
